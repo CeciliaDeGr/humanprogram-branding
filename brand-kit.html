@@ -120,6 +120,7 @@
     
     .cover-logo {
       margin-bottom: 48px;
+      margin-top: -80px;
     }
     
     .cover h1 {
@@ -144,10 +145,103 @@
     }
     
     .cover-date {
-      position: absolute;
-      bottom: 64px;
       font-size: 14px;
       color: var(--neutral);
+      margin-top: 24px;
+    }
+    
+    .toc-page {
+      background: var(--white);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 64px;
+      min-height: auto;
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+    
+    .toc-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      padding-left: 64px;
+    }
+    
+    .toc-list a {
+      display: flex;
+      align-items: center;
+      color: var(--neutral-dark);
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+    
+    .toc-list a:hover {
+      color: var(--lilac);
+    }
+    
+    .toc-number {
+      color: var(--lilac);
+      font-weight: 600;
+      margin-right: 16px;
+      min-width: 30px;
+    }
+    
+    .toc-text {
+      text-decoration: none;
+      border-bottom: 1px dashed var(--neutral-lighter);
+      padding-bottom: 2px;
+    }
+    
+    .toc-download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 32px;
+      margin-left: 64px;
+      padding: 10px 18px;
+      background: var(--froly);
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+      width: fit-content;
+    }
+    
+    .toc-download-btn:hover {
+      background: var(--froly-dark);
+      transform: translateY(-1px);
+    }
+    
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 28px;
+      background: var(--lilac);
+      color: var(--white);
+      font-family: 'Outfit', sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      text-decoration: none;
+      border-radius: var(--radius-round);
+      transition: all 0.2s ease;
+      margin-top: 20px;
+    }
+    
+    .download-btn:hover {
+      background: var(--lilac-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(147, 129, 255, 0.3);
+    }
+    
+    .download-btn svg {
+      width: 20px;
+      height: 20px;
     }
     
     /* Section Headers */
@@ -234,7 +328,9 @@
     }
     
     .logo-full {
-      height: 56px;
+      height: 80px;
+      width: auto;
+      object-fit: contain;
     }
     
     .logo-stacked {
@@ -535,6 +631,259 @@
       font-weight: 600;
     }
     
+    /* App Theme Cards */
+    .app-theme-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 48px;
+      margin-top: 32px;
+    }
+    
+    .app-theme-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .phone-mockup {
+      width: 280px;
+      height: 560px;
+      border-radius: 40px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      position: relative;
+      border: 8px solid #1a1a1a;
+    }
+    
+    .phone-screen {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .phone-screen.dark-theme {
+      background: var(--neutral-darkest);
+    }
+    
+    .phone-screen.light-theme {
+      background: var(--lilac);
+    }
+    
+    .phone-notch {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 24px;
+      background: #1a1a1a;
+      border-radius: 0 0 16px 16px;
+      z-index: 10;
+    }
+    
+    .phone-home-indicator {
+      position: absolute;
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      border-radius: 2px;
+      z-index: 10;
+    }
+    
+    .phone-screen.dark-theme .phone-home-indicator {
+      background: rgba(255,255,255,0.3);
+    }
+    
+    .phone-screen.light-theme .phone-home-indicator {
+      background: rgba(255,255,255,0.4);
+    }
+    
+    .splash-icon {
+      width: 56px;
+      height: auto;
+    }
+    
+    /* App UI Mockup */
+    .app-sidebar {
+      width: 55%;
+      padding: 48px 12px 24px 12px;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .app-sidebar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      padding: 0 4px;
+    }
+    
+    .app-sidebar-title {
+      font-size: 11px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.9);
+    }
+    
+    .app-token-badge {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 9px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.8);
+    }
+    
+    .app-token-icon {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      padding: 2px;
+      background: rgba(255,255,255,0.15);
+    }
+    
+    .app-menu {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    
+    .app-menu-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px;
+      border-radius: 8px;
+      font-size: 9px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.8);
+    }
+    
+    .app-menu-item.active {
+      background: rgba(255,255,255,0.1);
+    }
+    
+    .phone-screen.light-theme .app-menu-item.active {
+      background: rgba(255,255,255,0.2);
+    }
+    
+    .app-menu-icon {
+      width: 14px;
+      height: 14px;
+      border: 1.5px solid currentColor;
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .app-content {
+      width: 45%;
+      border-radius: 16px 0 0 16px;
+      margin: 36px 0 20px 0;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .phone-screen.dark-theme .app-content {
+      background: var(--neutral-darker);
+    }
+    
+    .phone-screen.light-theme .app-content {
+      background: var(--white);
+    }
+    
+    .app-content-header {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px;
+      background: var(--froly);
+      border-radius: 8px;
+      margin-bottom: 8px;
+    }
+    
+    .app-content-title {
+      font-size: 8px;
+      font-weight: 600;
+      color: var(--white);
+    }
+    
+    .app-chat-bubble {
+      border-radius: 8px;
+      padding: 8px;
+      margin-bottom: 6px;
+    }
+    
+    .phone-screen.dark-theme .app-chat-bubble {
+      background: rgba(255,255,255,0.08);
+    }
+    
+    .phone-screen.light-theme .app-chat-bubble {
+      background: var(--neutral-lightest);
+    }
+    
+    .app-chat-text {
+      font-size: 7px;
+      font-weight: 500;
+    }
+    
+    .phone-screen.dark-theme .app-chat-text {
+      color: rgba(255,255,255,0.9);
+    }
+    
+    .phone-screen.light-theme .app-chat-text {
+      color: var(--neutral-darkest);
+    }
+    
+    .app-chat-options {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-top: 8px;
+    }
+    
+    .app-chat-option {
+      border-radius: 6px;
+      padding: 6px 8px;
+      font-size: 6px;
+    }
+    
+    .phone-screen.dark-theme .app-chat-option {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.7);
+    }
+    
+    .phone-screen.light-theme .app-chat-option {
+      background: var(--white);
+      border: 1px solid var(--neutral-lighter);
+      color: var(--neutral-dark);
+    }
+    
+    .app-theme-info {
+      margin-top: 32px;
+      text-align: center;
+    }
+    
+    .app-theme-name {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--neutral-darkest);
+      margin-bottom: 8px;
+    }
+    
+    .app-theme-desc {
+      font-size: 14px;
+      color: var(--neutral-dark);
+      max-width: 300px;
+    }
+    
     /* Page decoration */
     .page-footer {
       position: absolute;
@@ -562,58 +911,64 @@
   <!-- Page 1: Cover -->
   <div class="page cover">
     <div class="cover-logo">
-      <svg width="120" height="126" viewBox="0 0 154 162" fill="none">
-        <path d="M138.716 0H53.9058L53.7688 -1.21527e-05C49.6659 -0.000559733 47.6005 -0.000835385 43.2357 4.51969C38.8225 9.09024 3.64913 64.51 3.64913 64.51C1.80789 66.9607 0.716797 70.0071 0.716797 73.3084V146.617C0.716797 154.714 7.28105 161.279 15.3785 161.279H94.5516C98.4018 161.279 101.905 159.794 104.522 157.367L149.121 112.748C151.82 110.092 153.492 106.409 153.492 102.339V14.6617C153.492 6.56426 146.876 0 138.716 0Z" fill="#B3A6FF"/>
-        <path d="M97.3107 14.1628C97.6336 12.6503 99.8137 12.7155 100.046 14.2446C102.734 31.9688 115.698 46.4004 133.034 50.9669L140.61 52.9624C142.338 53.4176 142.365 55.8606 140.648 56.3549L132.071 58.8234C115.24 63.6674 102.747 77.8341 100.047 95.1385C99.8091 96.6609 97.6408 96.7275 97.3103 95.2225L97.1791 94.6255C93.3995 77.4184 80.6249 63.5923 63.7698 58.4662L56.9563 56.3941C55.2271 55.8682 55.2563 53.4098 56.9975 52.9252L62.7895 51.313C80.1673 46.4758 93.4202 32.3867 97.1862 14.7458L97.3107 14.1628Z" fill="white"/>
-      </svg>
+      <img src="assets/graphics/outlined-round-title.png" alt="Human Program" style="max-width: 400px; height: auto;">
     </div>
-    <h1>Human<span>Program</span></h1>
     <p class="cover-subtitle">Brand Guidelines & Visual Identity</p>
     <p class="cover-date">December 2025</p>
   </div>
 
-  <!-- Page 2: Logo -->
-  <div class="page">
+  <!-- Page 2: Table of Contents -->
+  <div class="page toc-page">
+    <div class="section-header">
+      <h2 class="section-title">Contents</h2>
+    </div>
+    <nav class="toc-list">
+      <a href="#logo"><span class="toc-number">01</span><span class="toc-text">Logo</span></a>
+      <a href="#colors"><span class="toc-number">02</span><span class="toc-text">Colors</span></a>
+      <a href="#typography"><span class="toc-number">03</span><span class="toc-text">Typography</span></a>
+      <a href="#spacing"><span class="toc-number">04</span><span class="toc-text">Spacing & Sizing</span></a>
+      <a href="#ui-styles"><span class="toc-number">05</span><span class="toc-text">UI Styles</span></a>
+      <a href="#app-guidelines"><span class="toc-number">06</span><span class="toc-text">App Guidelines</span></a>
+    </nav>
+    <a href="downloads.html" class="toc-download-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+        <polyline points="7 10 12 15 17 10"/>
+        <line x1="12" y1="15" x2="12" y2="3"/>
+      </svg>
+      Download Assets
+    </a>
+  </div>
+
+  <!-- Page 3: Logo -->
+  <div class="page" id="logo">
     <div class="section-header">
       <p class="section-number">01</p>
       <h2 class="section-title">Logo</h2>
       <p class="section-desc">The Human Program logo consists of a distinctive star icon within a tilted rounded rectangle, paired with the wordmark.</p>
+      <a href="downloads.html" class="download-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="7 10 12 15 17 10"/>
+          <line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+        Download Assets
+      </a>
     </div>
     
     <div class="logo-grid">
       <div class="logo-card dark">
-        <svg class="logo-full" viewBox="0 0 320 60" fill="none">
-          <g transform="scale(0.37) translate(0, 0)">
-            <path d="M138.716 0H53.9058L53.7688 -1.21527e-05C49.6659 -0.000559733 47.6005 -0.000835385 43.2357 4.51969C38.8225 9.09024 3.64913 64.51 3.64913 64.51C1.80789 66.9607 0.716797 70.0071 0.716797 73.3084V146.617C0.716797 154.714 7.28105 161.279 15.3785 161.279H94.5516C98.4018 161.279 101.905 159.794 104.522 157.367L149.121 112.748C151.82 110.092 153.492 106.409 153.492 102.339V14.6617C153.492 6.56426 146.876 0 138.716 0Z" fill="#B3A6FF"/>
-            <path d="M97.3107 14.1628C97.6336 12.6503 99.8137 12.7155 100.046 14.2446C102.734 31.9688 115.698 46.4004 133.034 50.9669L140.61 52.9624C142.338 53.4176 142.365 55.8606 140.648 56.3549L132.071 58.8234C115.24 63.6674 102.747 77.8341 100.047 95.1385C99.8091 96.6609 97.6408 96.7275 97.3103 95.2225L97.1791 94.6255C93.3995 77.4184 80.6249 63.5923 63.7698 58.4662L56.9563 56.3941C55.2271 55.8682 55.2563 53.4098 56.9975 52.9252L62.7895 51.313C80.1673 46.4758 93.4202 32.3867 97.1862 14.7458L97.3107 14.1628Z" fill="white"/>
-          </g>
-          <text x="72" y="32" font-family="Outfit" font-size="32" font-weight="700" fill="white">Human</text>
-          <text x="72" y="54" font-family="Outfit" font-size="28" font-weight="400" fill="white">Program</text>
-        </svg>
+        <img src="assets/website/logos/png/logo-full-on-dark.png" alt="Full Logo on Dark" class="logo-full">
         <span class="logo-card-label">Primary — Dark Background</span>
       </div>
       
       <div class="logo-card light">
-        <svg class="logo-full" viewBox="0 0 320 60" fill="none">
-          <g transform="scale(0.37) translate(0, 0)">
-            <path d="M138.716 0H53.9058L53.7688 -1.21527e-05C49.6659 -0.000559733 47.6005 -0.000835385 43.2357 4.51969C38.8225 9.09024 3.64913 64.51 3.64913 64.51C1.80789 66.9607 0.716797 70.0071 0.716797 73.3084V146.617C0.716797 154.714 7.28105 161.279 15.3785 161.279H94.5516C98.4018 161.279 101.905 159.794 104.522 157.367L149.121 112.748C151.82 110.092 153.492 106.409 153.492 102.339V14.6617C153.492 6.56426 146.876 0 138.716 0Z" fill="#B3A6FF"/>
-            <path d="M97.3107 14.1628C97.6336 12.6503 99.8137 12.7155 100.046 14.2446C102.734 31.9688 115.698 46.4004 133.034 50.9669L140.61 52.9624C142.338 53.4176 142.365 55.8606 140.648 56.3549L132.071 58.8234C115.24 63.6674 102.747 77.8341 100.047 95.1385C99.8091 96.6609 97.6408 96.7275 97.3103 95.2225L97.1791 94.6255C93.3995 77.4184 80.6249 63.5923 63.7698 58.4662L56.9563 56.3941C55.2271 55.8682 55.2563 53.4098 56.9975 52.9252L62.7895 51.313C80.1673 46.4758 93.4202 32.3867 97.1862 14.7458L97.3107 14.1628Z" fill="white"/>
-          </g>
-          <text x="72" y="32" font-family="Outfit" font-size="32" font-weight="700" fill="#1B1F29">Human</text>
-          <text x="72" y="54" font-family="Outfit" font-size="28" font-weight="400" fill="#1B1F29">Program</text>
-        </svg>
+        <img src="assets/website/logos/png/logo-full-on-light.png" alt="Full Logo on Light" class="logo-full">
         <span class="logo-card-label">Primary — Light Background</span>
       </div>
       
       <div class="logo-card lilac">
-        <svg class="logo-full" viewBox="0 0 320 60" fill="none">
-          <g transform="scale(0.37) translate(0, 0)">
-            <path d="M138.716 0H53.9058L53.7688 -1.21527e-05C49.6659 -0.000559733 47.6005 -0.000835385 43.2357 4.51969C38.8225 9.09024 3.64913 64.51 3.64913 64.51C1.80789 66.9607 0.716797 70.0071 0.716797 73.3084V146.617C0.716797 154.714 7.28105 161.279 15.3785 161.279H94.5516C98.4018 161.279 101.905 159.794 104.522 157.367L149.121 112.748C151.82 110.092 153.492 106.409 153.492 102.339V14.6617C153.492 6.56426 146.876 0 138.716 0Z" fill="white"/>
-            <path d="M97.3107 14.1628C97.6336 12.6503 99.8137 12.7155 100.046 14.2446C102.734 31.9688 115.698 46.4004 133.034 50.9669L140.61 52.9624C142.338 53.4176 142.365 55.8606 140.648 56.3549L132.071 58.8234C115.24 63.6674 102.747 77.8341 100.047 95.1385C99.8091 96.6609 97.6408 96.7275 97.3103 95.2225L97.1791 94.6255C93.3995 77.4184 80.6249 63.5923 63.7698 58.4662L56.9563 56.3941C55.2271 55.8682 55.2563 53.4098 56.9975 52.9252L62.7895 51.313C80.1673 46.4758 93.4202 32.3867 97.1862 14.7458L97.3107 14.1628Z" fill="#9381FF"/>
-          </g>
-          <text x="72" y="32" font-family="Outfit" font-size="32" font-weight="700" fill="white">Human</text>
-          <text x="72" y="54" font-family="Outfit" font-size="28" font-weight="400" fill="white">Program</text>
-        </svg>
+        <img src="assets/website/logos/png/logo-full-on-brand.png" alt="Full Logo on Brand" class="logo-full">
         <span class="logo-card-label">Reversed — Brand Background</span>
       </div>
       
@@ -634,16 +989,13 @@
       </div>
       
       <div class="logo-card light">
-        <svg class="logo-stacked" viewBox="0 0 200 200" fill="none">
-          <circle cx="100" cy="100" r="100" fill="#1B1F29"/>
-          <g transform="translate(78, 38) scale(0.3)">
-            <path d="M138.716 0H53.9058L53.7688 -1.21527e-05C49.6659 -0.000559733 47.6005 -0.000835385 43.2357 4.51969C38.8225 9.09024 3.64913 64.51 3.64913 64.51C1.80789 66.9607 0.716797 70.0071 0.716797 73.3084V146.617C0.716797 154.714 7.28105 161.279 15.3785 161.279H94.5516C98.4018 161.279 101.905 159.794 104.522 157.367L149.121 112.748C151.82 110.092 153.492 106.409 153.492 102.339V14.6617C153.492 6.56426 146.876 0 138.716 0Z" fill="#B3A6FF"/>
-            <path d="M97.3107 14.1628C97.6336 12.6503 99.8137 12.7155 100.046 14.2446C102.734 31.9688 115.698 46.4004 133.034 50.9669L140.61 52.9624C142.338 53.4176 142.365 55.8606 140.648 56.3549L132.071 58.8234C115.24 63.6674 102.747 77.8341 100.047 95.1385C99.8091 96.6609 97.6408 96.7275 97.3103 95.2225L97.1791 94.6255C93.3995 77.4184 80.6249 63.5923 63.7698 58.4662L56.9563 56.3941C55.2271 55.8682 55.2563 53.4098 56.9975 52.9252L62.7895 51.313C80.1673 46.4758 93.4202 32.3867 97.1862 14.7458L97.3107 14.1628Z" fill="white"/>
-          </g>
-          <text x="100" y="120" font-family="Outfit" font-size="30" font-weight="700" fill="white" text-anchor="middle">Human</text>
-          <text x="100" y="150" font-family="Outfit" font-size="24" font-weight="400" fill="white" text-anchor="middle">Program</text>
-        </svg>
-        <span class="logo-card-label">Badge</span>
+        <img src="assets/website/badges/png/badge-dark.png" alt="Badge Dark" class="logo-stacked">
+        <span class="logo-card-label">Badge — Dark</span>
+      </div>
+      
+      <div class="logo-card dark">
+        <img src="assets/website/badges/png/badge-light.png" alt="Badge Light" class="logo-stacked">
+        <span class="logo-card-label">Badge — Light</span>
       </div>
     </div>
     
@@ -654,7 +1006,7 @@
   </div>
 
   <!-- Page 3: Primary Colors -->
-  <div class="page">
+  <div class="page" id="colors">
     <div class="section-header">
       <p class="section-number">02</p>
       <h2 class="section-title">Color Palette — Primary</h2>
@@ -1019,11 +1371,19 @@
   </div>
 
   <!-- Page 5: Typography -->
-  <div class="page">
+  <div class="page" id="typography">
     <div class="section-header">
       <p class="section-number">03</p>
       <h2 class="section-title">Typography</h2>
       <p class="section-desc">Outfit is our primary typeface — modern, geometric, and highly legible across all sizes.</p>
+      <a href="https://fonts.google.com/specimen/Outfit" target="_blank" class="download-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="7 10 12 15 17 10"/>
+          <line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+        Download Outfit Font
+      </a>
     </div>
     
     <div class="type-scale">
@@ -1108,7 +1468,7 @@
   </div>
 
   <!-- Page 6: Spacing & Sizing -->
-  <div class="page">
+  <div class="page" id="spacing">
     <div class="section-header">
       <p class="section-number">04</p>
       <h2 class="section-title">Spacing & Sizing</h2>
@@ -1212,7 +1572,7 @@
   </div>
 
   <!-- Page 7: UI Styles -->
-  <div class="page">
+  <div class="page" id="ui-styles">
     <div class="section-header">
       <p class="section-number">05</p>
       <h2 class="section-title">UI Styles</h2>
@@ -1297,7 +1657,210 @@
     
     <div class="page-footer">
       <span>Human Program — Brand Kit</span>
-      <span>7 / 7</span>
+      <span>7 / 8</span>
+    </div>
+  </div>
+
+  <!-- Page 8: App Brand Guidelines -->
+  <div class="page" id="app-guidelines">
+    <div class="section-header">
+      <p class="section-number">06</p>
+      <h2 class="section-title">App Brand Guidelines</h2>
+      <p class="section-desc">Visual guidelines for the Human Program mobile and desktop applications in dark and light themes.</p>
+      <a href="downloads.html#app-assets" class="download-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="7 10 12 15 17 10"/>
+          <line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+        Download Assets
+      </a>
+    </div>
+    
+    <!-- Splash Screens -->
+    <h3 style="font-size: 22px; font-weight: 600; color: var(--neutral-darkest); margin-bottom: 24px;">Splash Screens</h3>
+    <div class="app-theme-grid">
+      <div class="app-theme-card">
+        <div class="phone-mockup">
+          <div class="phone-screen dark-theme" style="align-items: center; justify-content: center;">
+            <div class="phone-notch"></div>
+            <img src="assets/website/icons/png/icon-color.png" alt="Splash Icon" class="splash-icon">
+            <div class="phone-home-indicator"></div>
+          </div>
+        </div>
+        <div class="app-theme-info">
+          <h3 class="app-theme-name">Dark Splash</h3>
+          <p class="app-theme-desc">Neutral Darkest background with color icon.</p>
+        </div>
+      </div>
+      
+      <div class="app-theme-card">
+        <div class="phone-mockup">
+          <div class="phone-screen light-theme" style="align-items: center; justify-content: center;">
+            <div class="phone-notch"></div>
+            <img src="assets/website/icons/png/icon-white.png" alt="Splash Icon" class="splash-icon">
+            <div class="phone-home-indicator"></div>
+          </div>
+        </div>
+        <div class="app-theme-info">
+          <h3 class="app-theme-name">Brand Splash</h3>
+          <p class="app-theme-desc">Lilac brand background with white icon.</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- App UI -->
+    <h3 style="font-size: 22px; font-weight: 600; color: var(--neutral-darkest); margin: 48px 0 24px 0;">App Interface</h3>
+    <div class="app-theme-grid">
+      <div class="app-theme-card">
+        <div class="phone-mockup">
+          <div class="phone-screen dark-theme">
+            <div class="phone-notch"></div>
+            <div class="app-sidebar">
+              <div class="app-sidebar-header">
+                <span class="app-sidebar-title">Menu</span>
+                <div class="app-token-badge">
+                  <img src="assets/app/notification/png/notification.png" alt="" class="app-token-icon">
+                  <span>51</span>
+                </div>
+              </div>
+              <div class="app-menu">
+                <div class="app-menu-item active">
+                  <div class="app-menu-icon"></div>
+                  <span>Learn</span>
+                </div>
+                <div class="app-menu-item">
+                  <div class="app-menu-icon"></div>
+                  <span>Courses</span>
+                </div>
+                <div class="app-menu-item">
+                  <div class="app-menu-icon"></div>
+                  <span>Topics</span>
+                </div>
+                <div class="app-menu-item">
+                  <div class="app-menu-icon"></div>
+                  <span>Profile</span>
+                </div>
+                <div class="app-menu-item">
+                  <div class="app-menu-icon"></div>
+                  <span>Get Tokens</span>
+                </div>
+                <div class="app-menu-item">
+                  <div class="app-menu-icon"></div>
+                  <span>Messages</span>
+                </div>
+                <div class="app-menu-item">
+                  <div class="app-menu-icon"></div>
+                  <span>Rewards</span>
+                </div>
+                <div class="app-menu-item">
+                  <div class="app-menu-icon"></div>
+                  <span>Settings</span>
+                </div>
+              </div>
+            </div>
+            <div class="app-content">
+              <div class="app-content-header">
+                <span class="app-content-title">Human Prgm</span>
+              </div>
+              <div class="app-chat-bubble">
+                <p class="app-chat-text">Hello! 👋</p>
+                <p class="app-chat-text" style="margin-top: 4px;">Choose your study mode:</p>
+                <div class="app-chat-options">
+                  <div class="app-chat-option">Continue studying</div>
+                  <div class="app-chat-option">Help on homework</div>
+                  <div class="app-chat-option">Test my knowledge</div>
+                </div>
+              </div>
+            </div>
+            <div class="phone-home-indicator"></div>
+          </div>
+        </div>
+        <div class="app-theme-info">
+          <h3 class="app-theme-name">Dark Theme UI</h3>
+          <p class="app-theme-desc">Primary interface with dark sidebar and white content cards.</p>
+        </div>
+      </div>
+      
+      <div class="app-theme-card">
+        <div class="phone-mockup">
+          <div class="phone-screen light-theme">
+            <div class="phone-notch"></div>
+            <div class="app-sidebar">
+              <div class="app-sidebar-header">
+                <span class="app-sidebar-title">Menu</span>
+                <div class="app-token-badge">
+                  <img src="assets/app/notification/png/notification.png" alt="" class="app-token-icon">
+                  <span>51</span>
+                </div>
+              </div>
+              <div class="app-menu">
+                <div class="app-menu-item active">
+                  <div class="app-menu-icon"></div>
+                  <span>Learn</span>
+                </div>
+                <div class="app-menu-item">
+                  <div class="app-menu-icon"></div>
+                  <span>Courses</span>
+                </div>
+                <div class="app-menu-item">
+                  <div class="app-menu-icon"></div>
+                  <span>Topics</span>
+                </div>
+                <div class="app-menu-item">
+                  <div class="app-menu-icon"></div>
+                  <span>Profile</span>
+                </div>
+                <div class="app-menu-item">
+                  <div class="app-menu-icon"></div>
+                  <span>Get Tokens</span>
+                </div>
+                <div class="app-menu-item">
+                  <div class="app-menu-icon"></div>
+                  <span>Messages</span>
+                </div>
+                <div class="app-menu-item">
+                  <div class="app-menu-icon"></div>
+                  <span>Leaderboard</span>
+                </div>
+                <div class="app-menu-item">
+                  <div class="app-menu-icon"></div>
+                  <span>Settings</span>
+                </div>
+              </div>
+            </div>
+            <div class="app-content">
+              <div class="app-content-header">
+                <span class="app-content-title">Leaderboard</span>
+              </div>
+              <div class="app-chat-bubble">
+                <p class="app-chat-text" style="font-weight: 600;">Completed Topics</p>
+                <div class="app-chat-options" style="margin-top: 6px;">
+                  <div class="app-chat-option" style="display: flex; align-items: center; gap: 4px;">
+                    <span style="font-weight: 600;">1</span> Ashish
+                  </div>
+                  <div class="app-chat-option" style="display: flex; align-items: center; gap: 4px;">
+                    <span style="font-weight: 600;">2</span> ritu
+                  </div>
+                  <div class="app-chat-option" style="display: flex; align-items: center; gap: 4px;">
+                    <span style="font-weight: 600;">3</span> Tim
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="phone-home-indicator"></div>
+          </div>
+        </div>
+        <div class="app-theme-info">
+          <h3 class="app-theme-name">Light Theme UI</h3>
+          <p class="app-theme-desc">Lilac brand sidebar with white content cards.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="page-footer">
+      <span>Human Program — Brand Kit</span>
+      <span>8 / 8</span>
     </div>
   </div>
 
