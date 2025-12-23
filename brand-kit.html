@@ -366,6 +366,17 @@
       border-radius: var(--radius-sm);
       overflow: hidden;
       box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    
+    .color-swatch:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    
+    .color-swatch:active {
+      transform: translateY(0);
     }
     
     .color-swatch-block {
@@ -1707,49 +1718,49 @@
           <div class="color-swatch-block" style="background: var(--orange-lightest);"></div>
           <div class="color-swatch-info">
             <p class="color-name">Lightest</p>
-            <p class="color-hex">#FFF7F2</p>
+            <p class="color-hex">#FFF6ED</p>
           </div>
         </div>
         <div class="color-swatch">
           <div class="color-swatch-block" style="background: var(--orange-lighter);"></div>
           <div class="color-swatch-info">
             <p class="color-name">Lighter</p>
-            <p class="color-hex">#FFE3D1</p>
+            <p class="color-hex">#FFDDB8</p>
           </div>
         </div>
         <div class="color-swatch">
           <div class="color-swatch-block" style="background: var(--orange-light);"></div>
           <div class="color-swatch-info">
             <p class="color-name">Light</p>
-            <p class="color-hex">#FFD8BE</p>
+            <p class="color-hex">#FFC278</p>
           </div>
         </div>
         <div class="color-swatch">
           <div class="color-swatch-block" style="background: var(--orange);"></div>
           <div class="color-swatch-info">
             <p class="color-name">Orange</p>
-            <p class="color-hex">#FFBE93</p>
+            <p class="color-hex">#FFA53A</p>
           </div>
         </div>
         <div class="color-swatch">
           <div class="color-swatch-block" style="background: var(--orange-dark);"></div>
           <div class="color-swatch-info">
             <p class="color-name">Dark</p>
-            <p class="color-hex">#DBA481</p>
+            <p class="color-hex">#D4851E</p>
           </div>
         </div>
         <div class="color-swatch">
           <div class="color-swatch-block" style="background: var(--orange-darker);"></div>
           <div class="color-swatch-info">
             <p class="color-name">Darker</p>
-            <p class="color-hex">#A67150</p>
+            <p class="color-hex">#9C5F10</p>
           </div>
         </div>
         <div class="color-swatch">
           <div class="color-swatch-block" style="background: var(--orange-darkest);"></div>
           <div class="color-swatch-info">
             <p class="color-name">Darkest</p>
-            <p class="color-hex">#573D2B</p>
+            <p class="color-hex">#5C3709</p>
           </div>
         </div>
       </div>
@@ -1872,49 +1883,49 @@
           <div class="color-swatch-block" style="background: var(--green-lightest);"></div>
           <div class="color-swatch-info">
             <p class="color-name">Lightest</p>
-            <p class="color-hex">#FCFFF5</p>
+            <p class="color-hex">#FAFFEB</p>
           </div>
         </div>
         <div class="color-swatch">
           <div class="color-swatch-block" style="background: var(--green-lighter);"></div>
           <div class="color-swatch-info">
             <p class="color-name">Lighter</p>
-            <p class="color-hex">#FAFFEB</p>
+            <p class="color-hex">#ECFAAB</p>
           </div>
         </div>
         <div class="color-swatch">
           <div class="color-swatch-block" style="background: var(--green-light);"></div>
           <div class="color-swatch-info">
             <p class="color-name">Light</p>
-            <p class="color-hex">#F0FFBA</p>
+            <p class="color-hex">#D6F268</p>
           </div>
         </div>
         <div class="color-swatch">
           <div class="color-swatch-block" style="background: var(--green);"></div>
           <div class="color-swatch-info">
             <p class="color-name">Green</p>
-            <p class="color-hex">#EAFF9D</p>
+            <p class="color-hex">#C0E832</p>
           </div>
         </div>
         <div class="color-swatch">
           <div class="color-swatch-block" style="background: var(--green-dark);"></div>
           <div class="color-swatch-info">
             <p class="color-name">Dark</p>
-            <p class="color-hex">#BBCC7D</p>
+            <p class="color-hex">#9FC426</p>
           </div>
         </div>
         <div class="color-swatch">
           <div class="color-swatch-block" style="background: var(--green-darker);"></div>
           <div class="color-swatch-info">
             <p class="color-name">Darker</p>
-            <p class="color-hex">#5D663E</p>
+            <p class="color-hex">#749119</p>
           </div>
         </div>
         <div class="color-swatch">
           <div class="color-swatch-block" style="background: var(--green-darkest);"></div>
           <div class="color-swatch-info">
             <p class="color-name">Darkest</p>
-            <p class="color-hex">#464C2F</p>
+            <p class="color-hex">#455710</p>
           </div>
         </div>
       </div>
@@ -2630,6 +2641,36 @@
       <span>8 / 8</span>
     </div>
   </div>
+
+<script>
+  // Copy hex value to clipboard when clicking color swatches
+  document.querySelectorAll('.color-swatch').forEach(swatch => {
+    swatch.style.cursor = 'pointer';
+    
+    swatch.addEventListener('click', async () => {
+      const hexElement = swatch.querySelector('.color-hex');
+      if (!hexElement) return;
+      
+      const hexValue = hexElement.textContent.trim();
+      
+      try {
+        await navigator.clipboard.writeText(hexValue);
+        
+        // Show feedback
+        const originalText = hexElement.textContent;
+        hexElement.textContent = 'Copied!';
+        hexElement.style.color = 'var(--green)';
+        
+        setTimeout(() => {
+          hexElement.textContent = originalText;
+          hexElement.style.color = '';
+        }, 1000);
+      } catch (err) {
+        console.error('Failed to copy:', err);
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
